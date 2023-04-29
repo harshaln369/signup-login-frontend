@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import AuthHOC from "../components/AuthHOC";
 
 const Root = () => {
@@ -28,7 +28,11 @@ const Root = () => {
             </span>{" "}
             you are logged in.
           </Typography>
-        ) : null}
+        ) : (
+          <div style={{ margin: "auto", textAlign: "center" }}>
+            <CircularProgress />
+          </div>
+        )}
         <Button
           variant="contained"
           color="error"
